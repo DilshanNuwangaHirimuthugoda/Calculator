@@ -1,3 +1,4 @@
+
 body {
     font-family: 'Arial', sans-serif;
     background-color: #f3f4f6;
@@ -54,4 +55,29 @@ button {
 
 button:hover {
     filter: brightness(90%);
+}
+
+.operator {
+    background-color: #e9843c;
+    color: white;
+}
+
+.function {
+    background-color: #6b7280;
+    color: white;
+}
+
+.number {
+    background-color: #e5e7eb;
+}
+
+.clear {
+    background-color: #dc2626;
+    color: white;
+}
+
+.equals {
+    background-color: #16a34a;
+    color: white;
+    /* grid-row: span 2; */
 }
