@@ -13,6 +13,35 @@
         <div class="history" id="history"></div>
         <div class="buttons">
             
+        
+<button class="clear" onclick="clearDisplay()">C</button>
+<button class="operator" onclick="appendToDisplay('/')">/</button>
+<button class="number" onclick="appendToDisplay('7')">7</button>
+<button class="number" onclick="appendToDisplay('8')">8</button>
+<button class="number" onclick="appendToDisplay('9')">9</button>
+<button class="operator" onclick="appendToDisplay('*')">×</button>
+
+
+<script>
+    let display = document.getElementById('display');
+    let currentInput = '0';
+
+    function appendToDisplay(value) {
+        if (currentInput === '0' && value !== '.') {
+            currentInput = value;
+        } else {
+            currentInput += value;
+        }
+        display.textContent = currentInput;
+    }
+
+    function clearDisplay() {
+        currentInput = '0';
+        display.textContent = currentInput;
+    }
+</script>
+
+
         </div>
     </div>
 </body>
