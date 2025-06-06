@@ -47,6 +47,32 @@
         currentInput = '0';
         display.textContent = currentInput;
     }
+    function calculate() {
+    try {
+        let expression = currentInput
+            .replace(/sqrt\(/g, 'Math.sqrt(')
+            .replace(/pow\(/g, 'Math.pow(')
+            .replace(/sin\(/g, 'Math.sin(')
+            .replace(/cos\(/g, 'Math.cos(')
+            .replace(/tan\(/g, 'Math.tan(')
+            .replace(/log\(/g, 'Math.log(');
+        
+        let result = eval(expression);
+        if (result === Infinity || result === -Infinity) {
+            throw new Error('Division by zero');
+        }
+        if (isNaN(result)) {
+            throw new Error('Invalid input');
+        }
+        result = Math.round(result * 10000) / 10000;
+        currentInput = result.toString();
+        display.textContent = currentInput;
+    } catch (error) {
+        display.textContent = 'Error';
+        currentInput = '0';
+    }
+}
+
 </script>
 
 
